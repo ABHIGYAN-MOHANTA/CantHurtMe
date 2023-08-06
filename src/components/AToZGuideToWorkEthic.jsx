@@ -1,4 +1,5 @@
 import React from "react";
+import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, ScrollView, View, Text, FlatList } from "react-native";
 import { styles } from "../styles/styles.js";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
