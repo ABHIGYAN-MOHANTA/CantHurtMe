@@ -1,9 +1,10 @@
-import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { View, Text, SafeAreaView } from "react-native";
+import React, { useState } from "react";
+import { View, Text, TextInput } from "react-native";
 import { styles } from "../styles/styles.js";
+import TodoList from "./TodoList.jsx";
 
 const TakingInventory = () => {
+  const [inventory, setInventory] = useState("");
   return (
     <View style={styles.subsection}>
       <Text style={styles.subheading}>Taking Inventory</Text>
@@ -15,6 +16,7 @@ const TakingInventory = () => {
       <Text style={styles.text}>
         Mission: This list of excuses will fuel your future success.
       </Text>
+      <TodoList />
     </View>
   );
 };

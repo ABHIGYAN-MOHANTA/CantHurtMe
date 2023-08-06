@@ -1,7 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { Text, View, SafeAreaView } from "react-native";
 import { styles } from "./styles";
-import Footer from "./src/components/Footer";
 import AToZGuideToComeback from "./src/components/AToZGuideToComeback";
 import AToZGuideToWorkEthic from "./src/components/AToZGuideToWorkEthic";
 import { NavigationContainer } from "@react-navigation/native";
