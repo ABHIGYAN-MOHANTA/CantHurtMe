@@ -8,6 +8,8 @@ import {
   StyleSheet,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
 const TodoList = () => {
   const [tasks, setTasks] = useState([]);
@@ -64,17 +66,25 @@ const TodoList = () => {
 
   const renderItem = ({ item }) => (
     <View style={styles.taskContainer}>
-      <TouchableOpacity onPress={() => handleToggleComplete(item.id)}>
-        <Text style={[styles.taskText, item.completed && styles.completedTask]}>
-          {item.text}
+      <View style={styles.taskTextContainer}>
+        <TouchableOpacity onPress={() => handleToggleComplete(item.id)}>
+          <Text
+            style={[styles.taskText, item.completed && styles.completedTask]}
+          >
+            {item.text}
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <TouchableOpacity
+        style={styles.addButton}
+        onPress={() => handleDeleteTask(item.id)}
+      >
+        <Text style={styles.deleteButton}>
+          {<MaterialIcons name="delete" size={24} color="#F6F6F6" />}
         </Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => handleDeleteTask(item.id)}>
-        <Text style={styles.deleteButton}>Delete</Text>
       </TouchableOpacity>
     </View>
   );
-
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
@@ -85,7 +95,9 @@ const TodoList = () => {
           onChangeText={setNewTask}
         />
         <TouchableOpacity style={styles.addButton} onPress={handleAddTask}>
-          <Text style={styles.addButtonText}>Add</Text>
+          <Text style={styles.addButtonText}>
+            {<FontAwesome name="plus" size={24} color="#F6F6F6" />}
+          </Text>
         </TouchableOpacity>
       </View>
       <FlatList
@@ -132,7 +144,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   addButtonText: {
-    color: "#fff",
+    color: "#F6F6F6",
     fontWeight: "bold",
   },
   flatList: {
@@ -140,11 +152,12 @@ const styles = StyleSheet.create({
   },
   taskContainer: {
     flexDirection: "row",
-    alignItems: "center",
     marginBottom: 10,
   },
-  taskText: {
+  taskTextContainer: {
     flex: 1,
+  },
+  taskText: {
     fontSize: 18,
     color: "#D8D9DA",
   },
@@ -152,8 +165,7 @@ const styles = StyleSheet.create({
     textDecorationLine: "line-through",
   },
   deleteButton: {
-    color: "#61677A",
-    marginLeft: 10,
+    color: "#D8D9DA",
   },
 });
 
