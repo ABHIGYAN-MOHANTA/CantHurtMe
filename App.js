@@ -2,14 +2,13 @@ import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
 import { Text, View, SafeAreaView } from "react-native";
 import { styles } from "./styles";
-import AToZGuideToComeback from "./src/components/AToZGuideToComeback";
-import AToZGuideToWorkEthic from "./src/components/AToZGuideToWorkEthic";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import TakingInventory from "./src/components/TakingInventory";
-import { MaterialIcons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import TakingInventoryHome from "./src/components/TakingInventoryHome";
+import MainScreen from "./src/screens/MainScreen";
+import AdditionalScreen from "./src/screens/AdditionalScreen";
+import { Entypo } from "@expo/vector-icons";
+import About from "./src/screens/About";
 
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -37,42 +36,45 @@ export default function App() {
             }}
           >
             <Tab.Screen
-              name="Inventory"
-              component={TakingInventoryHome}
-              options={{
-                tabBarIcon: ({ focused }) => (
-                  <MaterialIcons
-                    name="inventory"
-                    size={24}
-                    color={focused ? "#272829" : "#61677A"}
-                  />
-                ),
-              }}
-            />
-            <Tab.Screen
-              name={"Comeback"}
-              component={AToZGuideToComeback}
+              name="Home"
+              component={MainScreen}
               options={{
                 tabBarIcon: ({ focused }) => (
                   <MaterialCommunityIcons
-                    name="sword"
+                    name="home-flood"
                     size={24}
                     color={focused ? "#272829" : "#61677A"}
                   />
                 ),
+                headerShown: false,
               }}
             />
             <Tab.Screen
-              name={"WorkEthic"}
-              component={AToZGuideToWorkEthic}
+              name="Extras"
+              component={AdditionalScreen}
               options={{
                 tabBarIcon: ({ focused }) => (
-                  <MaterialCommunityIcons
-                    name="brain"
+                  <Entypo
+                    name="line-graph"
                     size={24}
                     color={focused ? "#272829" : "#61677A"}
                   />
                 ),
+                headerShown: false,
+              }}
+            />
+            <Tab.Screen
+              name="About"
+              component={About}
+              options={{
+                tabBarIcon: ({ focused }) => (
+                  <MaterialCommunityIcons
+                    name="robot-excited-outline"
+                    size={24}
+                    color={focused ? "#272829" : "#61677A"}
+                  />
+                ),
+                headerShown: false,
               }}
             />
           </Tab.Navigator>
