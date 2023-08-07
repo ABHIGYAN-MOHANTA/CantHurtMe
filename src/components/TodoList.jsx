@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+    backgroundColor: "#272829",
   },
   header: {
     fontSize: 24,
@@ -119,6 +120,7 @@ const styles = StyleSheet.create({
     borderColor: "#ccc",
     borderRadius: 4,
     padding: 10,
+    color: "#F6F6F6",
   },
   addButton: {
     backgroundColor: "#61677A",

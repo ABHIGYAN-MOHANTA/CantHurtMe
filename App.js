@@ -1,3 +1,4 @@
+import "react-native-gesture-handler";
 import { StatusBar } from "expo-status-bar";
 import { Text, View, SafeAreaView } from "react-native";
 import { styles } from "./styles";
@@ -8,6 +9,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import TakingInventory from "./src/components/TakingInventory";
 import { MaterialIcons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import TakingInventoryHome from "./src/components/TakingInventoryHome";
 
 const Tab = createBottomTabNavigator();
 export default function App() {
@@ -36,7 +38,7 @@ export default function App() {
           >
             <Tab.Screen
               name="Inventory"
-              component={TakingInventory}
+              component={TakingInventoryHome}
               options={{
                 tabBarIcon: ({ focused }) => (
                   <MaterialIcons
