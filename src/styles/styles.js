@@ -62,7 +62,6 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     alignSelf: "center",
     paddingTop: 20,
-    paddingBottom: 20,
   },
   footer: {
     justifyContent: "flex-end",

@@ -1,19 +1,19 @@
 import { createStackNavigator } from "@react-navigation/stack";
-import TodoList from "./TodoList.jsx";
-import TakingInventory from "./TakingInventory.jsx";
+import AccountabilityMirror from "./AccountabilityMirror.jsx";
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { styles } from "../styles/styles.js";
+import Mirror from "./Mirror.jsx";
 import { useNavigation } from "@react-navigation/native";
 
 const Stack = createStackNavigator();
 
-const TakingInventoryHome = () => {
+const AccountabilityMirrorHome = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.subsection}>
       <Stack.Navigator
-        initialRouteName="Taking Inventory"
+        initialRouteName="AccountabilityMirror"
         screenOptions={{
           headerStyle: {
             backgroundColor: "#61677A",
@@ -26,20 +26,24 @@ const TakingInventoryHome = () => {
         }}
       >
         <Stack.Screen
-          name="Taking Inventory"
-          component={TakingInventory}
+          name="AccountabilityMirror"
+          component={AccountabilityMirror}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Proceed to write..." component={TodoList} />
+        <Stack.Screen
+          name="Mirror"
+          component={Mirror}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => navigation.navigate("Proceed to write...")}
+        onPress={() => navigation.navigate("Mirror")}
       >
-        <Text style={styles.buttonText}>Proceed to write...</Text>
+        <Text style={styles.buttonText}>Proceed to On the Go Mirror</Text>
       </TouchableOpacity>
     </View>
   );
 };
 
-export default TakingInventoryHome;
+export default AccountabilityMirrorHome;

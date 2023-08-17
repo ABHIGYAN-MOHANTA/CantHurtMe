@@ -7,15 +7,17 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import MainScreen from "./src/screens/MainScreen";
 import AdditionalScreen from "./src/screens/AdditionalScreen";
-import { Entypo } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import About from "./src/screens/About";
+import { FontAwesome5 } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
-        <Text style={styles.title}>Can't Hurt Me</Text>
+        <Text style={styles.title}>UnbreakableMe</Text>
         <Text style={styles.header}>inspired by David Goggins</Text>
         <StatusBar style="auto" />
         <NavigationContainer>
@@ -28,7 +30,7 @@ export default function App() {
               headerStyle: {
                 backgroundColor: "#272829",
               },
-              headerTitleStyle: {
+              headerTitleStFocusedyle: {
                 color: "#D8D9DA",
                 fontWeight: "bold",
                 fontSize: 25,
@@ -36,12 +38,12 @@ export default function App() {
             }}
           >
             <Tab.Screen
-              name="Home"
+              name="CantHurtMe"
               component={MainScreen}
               options={{
                 tabBarIcon: ({ focused }) => (
-                  <MaterialCommunityIcons
-                    name="home-flood"
+                  <FontAwesome5
+                    name="dharmachakra"
                     size={24}
                     color={focused ? "#272829" : "#61677A"}
                   />
@@ -50,12 +52,12 @@ export default function App() {
               }}
             />
             <Tab.Screen
-              name="Extras"
+              name="Valuetainment"
               component={AdditionalScreen}
               options={{
                 tabBarIcon: ({ focused }) => (
-                  <Entypo
-                    name="line-graph"
+                  <FontAwesome
+                    name="briefcase"
                     size={24}
                     color={focused ? "#272829" : "#61677A"}
                   />

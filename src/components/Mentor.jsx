@@ -3,7 +3,7 @@ import { View, Text } from "react-native";
 import { styles } from "../styles/styles.js";
 import WebView from "react-native-webview";
 
-const AToZGuideToWorkEthic = () => {
+const Mentor = () => {
   return (
     <View style={styles.subsection}>
       <View style={{ flex: 1 }}>
@@ -12,7 +12,7 @@ const AToZGuideToWorkEthic = () => {
           javaScriptEnabled={true}
           domStorageEnabled={true}
           source={{
-            uri: "https://www.youtube.com/embed/F-_qOh5tKrI",
+            uri: "https://www.youtube.com/embed/SX3LjUdT6Qw",
           }}
         />
       </View>
@@ -20,4 +20,4 @@ const AToZGuideToWorkEthic = () => {
   );
 };
 
-export default AToZGuideToWorkEthic;
+export default Mentor;

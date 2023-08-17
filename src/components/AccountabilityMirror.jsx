@@ -5,16 +5,19 @@ import { styles } from "../styles/styles.js";
 const AccountabilityMirror = () => {
   return (
     <View style={styles.subsection}>
+      <Text style={styles.subheading}>Accountability Mirror</Text>
       <Text style={styles.marginTopText}>
-        Task: Write all your insecurities, dreams, and goals on Post-Its and put
-        them on the mirror you look at every morning. You will use this
-        accountability mirror to remind yourself of your mission each morning.
+        Put Post-It notes all over the mirror you use in the morning of your
+        goals. That way, they’re IN YOUR FACE every morning and
+        night…coincidentally the best times of day to make things stick to your
+        subconscious, too.
       </Text>
       <Text style={styles.text}>
-        Mission: If you are trying to lose weight, your first Post-It may be to
-        lose two pounds in the first week.Once that goal is achieved, remove the
-        note and post the next goal of two to five pounds until your ultimate
-        goal is realized.
+        Make the goals fairly small and going towards your big goals. As an
+        example, if you want to lose 40 pounds — put a goal of 5 lbs on the
+        Post-It, so you can pull it down as completed sooner and get the
+        momentum for it…as the 40 pounds sitting up there on the mirror can be
+        pretty damn DE-motivating if it’s too big.
       </Text>
     </View>
   );

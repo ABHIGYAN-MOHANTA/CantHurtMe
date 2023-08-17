@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "thunderstorm",
-    "slug": "thunderstorm",
+    "name": "UnbreakableMe",
+    "slug": "UnbreakableMe",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,24 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.thunderdome6602.UnbreakableMe"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "aae4a862-ff19-42e9-8a1e-8465a7015c0b"
+      }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access your camera."
+        }
+      ]
+    ]
   }
 }

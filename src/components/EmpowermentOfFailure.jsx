@@ -10,8 +10,9 @@ import {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
+import { styles } from "../styles/styles";
 
-const DiscomfortZoneExploitation = () => {
+const EmpowermentOfFailure = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
 
@@ -23,9 +24,7 @@ const DiscomfortZoneExploitation = () => {
   // Function to retrieve data from AsyncStorage
   const retrieveData = async () => {
     try {
-      const storedTasks = await AsyncStorage.getItem(
-        "@discomfortZoneExploitation"
-      );
+      const storedTasks = await AsyncStorage.getItem("@empowermentOfFailure");
       if (storedTasks !== null) {
         setTasks(JSON.parse(storedTasks));
       }
@@ -37,10 +36,7 @@ const DiscomfortZoneExploitation = () => {
   // Function to save data to AsyncStorage
   const saveData = async (data) => {
     try {
-      await AsyncStorage.setItem(
-        "@discomfortZoneExploitation",
-        JSON.stringify(data)
-      );
+      await AsyncStorage.setItem("@empowermentOfFailure", JSON.stringify(data));
     } catch (error) {
       console.error("Error saving data to AsyncStorage:", error);
     }
@@ -70,44 +66,42 @@ const DiscomfortZoneExploitation = () => {
   };
 
   const renderItem = ({ item }) => (
-    <View style={styles.taskContainer}>
-      <View style={styles.taskTextContainer}>
+    <View style={styless.taskContainer}>
+      <View style={styless.taskTextContainer}>
         <TouchableOpacity onPress={() => handleToggleComplete(item.id)}>
           <Text
-            style={[styles.taskText, item.completed && styles.completedTask]}
+            style={[styless.taskText, item.completed && styless.completedTask]}
           >
             {item.text}
           </Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity
-        style={styles.addButton}
+        style={styless.addButton}
         onPress={() => handleDeleteTask(item.id)}
       >
-        <Text style={styles.deleteButton}>
+        <Text style={styless.deleteButton}>
           {<MaterialIcons name="delete" size={24} color="#F6F6F6" />}
         </Text>
       </TouchableOpacity>
     </View>
   );
   return (
-    <View style={styles.container}>
-      <Text style={styles.subheading}>Discomfort Zone Exploitation</Text>
-      <Text style={styles.text}>
-        Get your journal and write down the things you don’t like to do that
-        make you uncomfortable and then do these things. Develop a “calloused
-        mind” by stepping out of your comfort zone! Do something that sucks
-        every day no matter how small it is!
+    <View style={styless.container}>
+      <Text style={styles.subheading}>Empowerment of Failure</Text>
+      <Text style={styless.text}>
+        Task: Write after reports of what happened after you committed to the
+        cause
       </Text>
-      <View style={styles.inputContainer}>
+      <View style={styless.inputContainer}>
         <TextInput
-          style={styles.input}
+          style={styless.input}
           placeholder="Write here..."
           value={newTask}
           onChangeText={setNewTask}
         />
-        <TouchableOpacity style={styles.addButton} onPress={handleAddTask}>
-          <Text style={styles.addButtonText}>
+        <TouchableOpacity style={styless.addButton} onPress={handleAddTask}>
+          <Text style={styless.addButtonText}>
             {<FontAwesome name="plus" size={24} color="#F6F6F6" />}
           </Text>
         </TouchableOpacity>
@@ -116,13 +110,15 @@ const DiscomfortZoneExploitation = () => {
         data={tasks}
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
-        style={styles.flatList}
+        style={styless.flatList}
       />
     </View>
   );
 };
 
-const styles = StyleSheet.create({
+export default EmpowermentOfFailure;
+
+const styless = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
@@ -183,16 +179,6 @@ const styles = StyleSheet.create({
     color: "#D8D9DA",
     marginBottom: 10,
     textAlign: "center",
-  },
-  subheading: {
-    color: "#D8D9DA",
-    fontSize: 20,
-    fontWeight: "bold",
-    alignSelf: "center",
-    paddingTop: 20,
-    marginTop: -25,
-    marginBottom: 10,
+    marginTop: 20,
   },
 });
-
-export default DiscomfortZoneExploitation;

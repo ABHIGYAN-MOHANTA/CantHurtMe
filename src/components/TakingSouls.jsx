@@ -87,12 +87,13 @@ const TakingSouls = () => {
   );
   return (
     <View style={styles.container}>
+      <Text style={styles.subheading}>Taking Souls</Text>
       <Text style={styles.text}>
-        Identify a competitive situation. Who are you competing against? Earn
-        their respect with excellence. Work harder than you’ve ever worked
-        before. Crush their standards. Take their negativity and use it dominate
-        their task with everything you’ve got.Have your doubters watch you
-        achieve something they could have never even done themselves.
+        When someone doesn't believe in you, work so hard that you surpass their
+        every expectation and they look at you in sheer awe. They don’t have to
+        like you, it’s about earned respect. You have achieved so much or worked
+        so damn hard that it breaks their preconceptions of you. Write down the
+        names of the people whose soul you are going to take!
       </Text>
       <View style={styles.inputContainer}>
         <TextInput
@@ -178,6 +179,15 @@ const styles = StyleSheet.create({
     color: "#D8D9DA",
     marginBottom: 10,
     textAlign: "center",
+  },
+  subheading: {
+    color: "#D8D9DA",
+    fontSize: 20,
+    fontWeight: "bold",
+    alignSelf: "center",
+    paddingTop: 20,
+    marginTop: -25,
+    marginBottom: 10,
   },
 });
 

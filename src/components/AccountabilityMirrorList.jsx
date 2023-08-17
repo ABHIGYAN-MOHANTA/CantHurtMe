@@ -11,7 +11,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { MaterialIcons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 
-const DiscomfortZoneExploitation = () => {
+const AccountabilityMirrorList = () => {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
 
@@ -24,7 +24,7 @@ const DiscomfortZoneExploitation = () => {
   const retrieveData = async () => {
     try {
       const storedTasks = await AsyncStorage.getItem(
-        "@discomfortZoneExploitation"
+        "@accountabilityMirrorList"
       );
       if (storedTasks !== null) {
         setTasks(JSON.parse(storedTasks));
@@ -38,7 +38,7 @@ const DiscomfortZoneExploitation = () => {
   const saveData = async (data) => {
     try {
       await AsyncStorage.setItem(
-        "@discomfortZoneExploitation",
+        "@accountabilityMirrorList",
         JSON.stringify(data)
       );
     } catch (error) {
@@ -92,13 +92,6 @@ const DiscomfortZoneExploitation = () => {
   );
   return (
     <View style={styles.container}>
-      <Text style={styles.subheading}>Discomfort Zone Exploitation</Text>
-      <Text style={styles.text}>
-        Get your journal and write down the things you don’t like to do that
-        make you uncomfortable and then do these things. Develop a “calloused
-        mind” by stepping out of your comfort zone! Do something that sucks
-        every day no matter how small it is!
-      </Text>
       <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
@@ -126,7 +119,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#272829",
   },
   header: {
     fontSize: 24,
@@ -147,7 +139,6 @@ const styles = StyleSheet.create({
     color: "#F6F6F6",
   },
   addButton: {
-    backgroundColor: "#61677A",
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 4,
@@ -158,6 +149,9 @@ const styles = StyleSheet.create({
   addButtonText: {
     color: "#F6F6F6",
     fontWeight: "bold",
+    textShadowColor: "black",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 2,
   },
   flatList: {
     flex: 1,
@@ -172,27 +166,19 @@ const styles = StyleSheet.create({
   taskText: {
     fontSize: 18,
     color: "#D8D9DA",
+    textShadowColor: "black",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 2,
   },
   completedTask: {
     textDecorationLine: "line-through",
   },
   deleteButton: {
     color: "#D8D9DA",
-  },
-  text: {
-    color: "#D8D9DA",
-    marginBottom: 10,
-    textAlign: "center",
-  },
-  subheading: {
-    color: "#D8D9DA",
-    fontSize: 20,
-    fontWeight: "bold",
-    alignSelf: "center",
-    paddingTop: 20,
-    marginTop: -25,
-    marginBottom: 10,
+    textShadowColor: "black",
+    textShadowOffset: { width: -1, height: 1 },
+    textShadowRadius: 2,
   },
 });
 
-export default DiscomfortZoneExploitation;
+export default AccountabilityMirrorList;
